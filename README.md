@@ -41,9 +41,9 @@ hmrdb-sqltst1 : 4 results logged
 # References
 ## HammerDB
 - [HammerDB website](https://www.hammerdb.com/)
-- [HammerDB on SourceForge (for source, support discussion board)](https://sourceforge.net/projects/hammerdb/)
+- [HammerDB on SourceForge](https://sourceforge.net/projects/hammerdb/) (for source code, support discussion board, etc.)
 - [HammerDB Best Practice for SQL Server Performance and Scalability](https://www.hammerdb.com/blog/uncategorized/hammerdb-best-practice-for-sql-server-performance-and-scalability/)
 
 ## SQL Server Best Practices & Performance Tuning
 - [BrentOzar.com](https://www.brentozar.com/)
-- [SQL Server Perfmon (Performance Monitor) Best Practices](https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/)
+  - [SQL Server Perfmon (Performance Monitor) Best Practices](https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/)
