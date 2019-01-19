@@ -1,5 +1,5 @@
 # HammerDB-utils
-Various Powershell scripts to help with automating various aspects of using HammerDB with SQL Server
+Powershell scripts to help with automating various aspects of using HammerDB to run benchmark tests against SQL Server.
 
 # GetSQLVersion.ps1
 Simply tests connectivity to the SQL Server instance (mainly for easy troubleshooting).
@@ -20,7 +20,7 @@ This script picks up where SQLConfig.ps1 left off to:
 - Add sp_CPUSIMPLE stored procedure
 
 # ParseResults.ps1
-This script aggregates HammerDB benchmark runs from multiple servers into a single results file.
+This script aggregates HammerDB TPC-C benchmark results (as logged in C:\hammerdb.log) from multiple SQL Server instances into a single comma-delimited results file.
 
 ## Sample HammerDBResults.txt
 ```
@@ -37,3 +37,13 @@ hmrdb-sqltst1,Fri Jan 18 15:31:19 MST,20,76890,16763
 hmrdb-sqltst1 : Enabled
 hmrdb-sqltst1 : 4 results logged
 ```
+
+# References
+## HammerDB
+- [HammerDB website](https://www.hammerdb.com/)
+- [HammerDB on SourceForge (for source, support discussion board)](https://sourceforge.net/projects/hammerdb/)
+- [HammerDB Best Practice for SQL Server Performance and Scalability](https://www.hammerdb.com/blog/uncategorized/hammerdb-best-practice-for-sql-server-performance-and-scalability/)
+
+## SQL Server Best Practices & Performance Tuning
+- [BrentOzar.com](https://www.brentozar.com/)
+- [SQL Server Perfmon (Performance Monitor) Best Practices](https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/)
