@@ -1,22 +1,39 @@
 # HammerDB-utils
 Various Powershell scripts to help with automating various aspects of using HammerDB with SQL Server
 
-Scripts
-- GetSQLVersion.ps1
-- SQLConfig.ps1
-- SQLConfig2.ps1
-- ParseResults.ps1
+# GetSQLVersion.ps1
+Simply tests connectivity to the SQL Server instance (mainly for easy troubleshooting).
 
-Example output in HammerDBResults.txt:
+# SQLConfig.ps1
+This script performs the following tasks:
+- Sets SQL Server settings for HammerDB
+- Moves TempDB files from C: to F:
 
+At this point SQL Server (or the VM) needs to be restarted to move the TempDB files (since if we resize them now SQL Server tries to resize them on C:).
+
+# SQLConfig2.ps1
+This script picks up where SQLConfig.ps1 left off to:
+- Resize the default 4 TempDB database files and log to 8GB
+- Add 4 additional TempDB database files
+- Attach the tpcc database
+- Configure the tpcc database
+- Add sp_CPUSIMPLE stored procedure
+
+# ParseResults.ps1
+This script aggregates HammerDB benchmark runs from multiple servers into a single results file.
+
+## Sample HammerDBResults.txt
+```
 hostname,TIMEDATE,USERS,TPM,NOPM
 hmrdb-sqltst1,Fri Jan 18 12:15:37 MST,10,60501,13207
 hmrdb-sqltst1,Fri Jan 18 14:25:30 MST,10,62428,13552
 hmrdb-sqltst1,Fri Jan 18 15:03:17 MST,10,63033,13684
 hmrdb-sqltst1,Fri Jan 18 15:31:19 MST,20,76890,16763
+```
 
-Example output in HammerDBRuns.txt
-
+## Sample HammerDBRuns.txt
+```
 1/18/2019 5:26:24 PM - Parsing HammerDB Logs
 hmrdb-sqltst1 : Enabled
 hmrdb-sqltst1 : 4 results logged
+```
