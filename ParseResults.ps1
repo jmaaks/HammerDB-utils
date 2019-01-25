@@ -61,10 +61,16 @@ foreach ($hostname in $hostnames)
 			}
 
 			$found = $line -match "System achieved (?<content>.*) SQL Server"
-			$TPM = $matches['content']
+			if ($found)
+			{	
+				$TPM = $matches['content']
+			}
 
 			$found = $line -match "at (?<content>.*) NOPM"
-			$NOPM = $matches['content']
+			if ($found)
+			{	
+				$NOPM = $matches['content']
+			}
 
 			Add-Content -Path $HammerDBResults "$hostname,$Timestamp,$NumUsers,$TPM,$NOPM"
 
